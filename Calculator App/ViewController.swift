@@ -25,9 +25,8 @@ class ViewController: UIViewController {
             numberOnScreen = Double(resultLabel.text!)!
             performingMath = false
         }else{
-            resultLabel.text = resultLabel.text! + String(sender.tag - 1)
+            resultLabel.text =  resultLabel.text! + String(sender.tag - 1)
             numberOnScreen = Double(resultLabel.text!)!
-            
         }
         
     }
@@ -59,16 +58,16 @@ class ViewController: UIViewController {
         else if(sender.tag == 18){ //when user clicks on = sign
             switch  operation{
             case 14: //Division
-                resultLabel.text = String(previousNumber / numberOnScreen)
+                resultLabel.text = String((Int)(previousNumber / numberOnScreen))
                 
             case 15:// Multiplication
-                resultLabel.text = String(previousNumber * numberOnScreen)
+                resultLabel.text = String((Int)(previousNumber * numberOnScreen))
                 
             case 16://Subtraction
-                resultLabel.text = String(previousNumber - numberOnScreen)
+                resultLabel.text = String((Int)(previousNumber - numberOnScreen))
                 
             case 17: //Addition
-                resultLabel.text =  String(previousNumber + numberOnScreen)
+                resultLabel.text =  String((Int)(previousNumber + numberOnScreen))
                 
             default:
                 print("")
@@ -80,14 +79,10 @@ class ViewController: UIViewController {
             previousNumber = 0
             numberOnScreen = 0
             operation = 0;
+            performingMath = false;
             
         }
     }
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
